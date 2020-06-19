@@ -3,6 +3,16 @@
 	background: red !important;
 }
 
+.nav{
+	background: black !important;
+	padding: 8px !important;
+}
+
 .nav a:hover{
 	border-radius: 0px;
+	border: transparent;
+}
+
+body {
+	background: #F5F5F5;
 }

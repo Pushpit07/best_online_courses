@@ -25,17 +25,17 @@ const Layout = ({children}) => {
 	);
 
 	const nav = () => (
-        <ul className="nav nav-tabs bg-success">
+        <ul className="nav sticky-top nav-tabs">
 			
 			<li className="nav-item">
 				<Link href="/">
-					<a className="nav-link text-light" >Home</a>	
+					<a className="nav-link text-light mb-0 h4" style={{marginTop: '-4px'}}>Home</a>	
 				</Link>
 			</li>
 
 			<li className="nav-item">
 				<Link href="/user/link/create">
-					<a className="nav-link text-light" style={{}} >Submit a link</a>	
+					<a className="nav-link text-light mb-0 h5" >Submit a link</a>	
 				</Link>
 			</li>
 
@@ -45,13 +45,13 @@ const Layout = ({children}) => {
 					<React.Fragment>
 						<li className="nav-item ml-auto ">
 							<Link href="/login">
-								<a className="nav-link text-light" >Login</a>	
+								<a className="nav-link text-light mb-0 h5"  >Login</a>	
 							</Link>
 						</li>
 
 						<li className="nav-item">
 							<Link href="/register">
-								<a className="nav-link text-light" >Register</a>	
+								<a className="nav-link text-light mb-0 h5"  >Register</a>	
 							</Link>
 						</li>
 					</React.Fragment>
@@ -63,7 +63,7 @@ const Layout = ({children}) => {
 				process.browser && isAuth() && isAuth().role === 'admin' && (
 					<li className="nav-item ml-auto">
 						<Link href="/admin">
-							<a className="nav-link text-light" >{isAuth().name}</a>	
+							<a className="nav-link text-light mb-0 h5"  >{isAuth().name}</a>	
 						</Link>
 					</li>
 				)
@@ -74,7 +74,7 @@ const Layout = ({children}) => {
 				isAuth() && isAuth().role === 'subscriber' && (
 					<li className="nav-item ml-auto">
 						<Link href="/user">
-							<a className="nav-link text-light" >{isAuth().name}</a>	
+							<a className="nav-link text-light mb-0 h5"  >{isAuth().name}</a>	
 						</Link>
 					</li>
 				)
@@ -82,9 +82,11 @@ const Layout = ({children}) => {
 			
 			{isAuth() && (
 				<li className="nav-item">
-					<a onClick={logout} className="nav-link text-light" >
-					Logout
-					</a>	
+					<Link href="/login">
+						<a onClick={logout} className="nav-link text-light mb-0 h5"  >
+							Logout
+						</a>	
+					</Link>
 				</li>
 			)}
 

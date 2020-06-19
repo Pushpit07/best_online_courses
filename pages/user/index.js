@@ -33,25 +33,35 @@ const User = ({user, token, userLinks}) => {
 	}
 
 	const listOfLinks = () => userLinks.map((l,i) => (
-		<div key={i} className="row alert alert-info p-2 pb-3">
+		<div key={i} className="row alert alert-secondary p-2 pb-3">
 			<div className="col-md-8">
 				<a href={l.url} target="_blank">
-					<h5 className="pt-2">{l.title}</h5>
-					<h6 className="pt-2 text-danger" style={{fontSize: '12px'}}>{l.url}</h6>
+					<h5 className="pt-2" style={{color: '#202020'}}>{l.title}</h5>
+					<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue'}}>{l.url}</h6>
 				</a>
 			</div>
 			<div className="col-md-4 pt-2 float-right" >
 				<span className="float-right">{moment(l.createdAt).fromNow()} by {l.postedBy.name}</span>
 
-					<span onClick={(e) => confirmDelete(e, l._id)} className="badge text-danger float-right pt-2" >
-						<button className=" btn-danger btn-xs" style={{borderRadius: '3px', padding: '4px', paddingLeft: '6px', paddingRight: '6px'}}>Delete</button>
-					</span>
+					
 
 					<Link href={`/user/link/${l._id}`}>
-						<span  className="badge text-primary float-right pt-2">
-							<button className=" btn-primary btn-xs" style={{borderRadius: '3px', padding: '4px', paddingLeft: '6px', paddingRight: '6px'}}>Update</button>
+						<span  className="badge text-primary pt-2 float-right">
+							<button className=" btn-primary btn-xs" 
+									style={{borderRadius: '3px', 
+											padding: '4px', 
+											paddingLeft: '6px', 
+											paddingRight: '6px'}}> Update </button>
 						</span>
 					</Link>
+
+					<span onClick={(e) => confirmDelete(e, l._id)} className="badge text-danger pt-2 float-right" >
+						<button className=" btn-danger btn-xs" 
+								style={{borderRadius: '3px', 
+										padding: '4px', 
+										paddingLeft: '6px', 
+										paddingRight: '6px'}}> Delete </button>
+					</span>
 			</div>
 				<div className="col-md-12">
 					<span className="badge text-dark" style={{marginLeft: '-4px'}}>{l.type} / {l.medium}</span>
@@ -68,23 +78,27 @@ const User = ({user, token, userLinks}) => {
 
 	return (
 		<Layout>
-			<h1 style={{display: 'inline'}}>{user.name}'s Dashboard    </h1>
+			<h1 style={{display: 'inline'}} >{user.name}'s Dashboard    </h1>
 			<h5 style={{display: 'inline'}}><span className="text-muted">/ {user.role}</span></h5>
 			<hr/>
 			<div className="row">
 				<div className="col-md-4">
-					<ul className="nav flex-column">
+					<ul className="flex-column" style={{listStyleType:'none'}}>
 						<li className="nav-item">
 							<Link href="/user/link/create">
-								<a className="nav link">
-									Submit a link
+								<a className="nav-link">
+									<button className="btn btn-dark">
+										Submit a link
+									</button>
 								</a>
 							</Link>
 						</li>
 						<li className="nav-item">
 							<Link href="/user/profile/update">
-								<a className="nav link">
-									Update my profile
+								<a className="nav-link">
+									<button className="btn btn-dark">
+										Update my profile
+									</button>
 								</a>
 							</Link>
 						</li>

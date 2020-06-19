@@ -59,16 +59,16 @@ const Links = ({query, category, links, totalLinks, linksLimit, linkSkip}) => {
 
 	const listOfPopularLinks = () => (
 		popular.map((l, i) => (
-			<div key={i} className="row alert alert-secondary p-2 pb-3">
+			<div key={i} className="row alert alert-info p-2 pb-3">
 				<div className="col-md-8" onClick={() => handlePopularClick(l._id)}>
 					<a href={l.url} target="_blank">
-						<h5 className="pt-2">{l.title}</h5>
-						<h6 className="pt-2 text-danger" style={{fontSize: '12px'}}>{l.url}</h6>
+						<h5 className="pt-2" style={{color: '#202020'}}>{l.title}</h5>
+						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue'}}>{l.url}</h6>
 					</a>
 				</div>
 
 				<div className="col-md-12">
-					<span className="badge text-secondary" style={{marginLeft: '-4px'}}>{l.type} / {l.medium}</span>
+					<span className="badge text-dark" style={{marginLeft: '-4px'}}>{l.type} / {l.medium}</span>
 					
 					<span className="badge text-secondary float-right">{l.clicks} clicks</span>
 
@@ -81,11 +81,11 @@ const Links = ({query, category, links, totalLinks, linksLimit, linkSkip}) => {
 
 	const listOfLinks = () => (
 		allLinks.map((l, i) => (
-			<div key={i} className="row alert alert-info p-2 pb-3">
+			<div key={i} className="row alert alert-secondary p-2 pb-3">
 				<div className="col-md-8" onClick={e => handleClick(l._id)}>
 					<a href={l.url} target="_blank">
-						<h5 className="pt-2">{l.title}</h5>
-						<h6 className="pt-2 text-danger" style={{fontSize: '12px'}}>{l.url}</h6>
+						<h5 className="pt-2" style={{color: '#202020'}}>{l.title}</h5>
+						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue'}}>{l.url}</h6>
 					</a>
 				</div>
 				<div className="col-md-4 pt-2">
@@ -125,7 +125,7 @@ const Links = ({query, category, links, totalLinks, linksLimit, linkSkip}) => {
 			<Layout>
 				<div className="row" style={{marginLeft: '-30px'}}>
 					<div className="col-md-12">
-						<h1 className="display-4 font-weight-bold">{category.name} - URLs / Links</h1>
+						<h1 className="display-4 font-weight-bold" style={{fontFamily: 'tisa'}}>{category.name} - URLs / Links</h1>
 						<hr/>
 						<div className="col-md-8 lead alert alert-secondary pt-3" style={{display: 'inline-block'}}>{renderHTML(category.content || '')}</div>
 						

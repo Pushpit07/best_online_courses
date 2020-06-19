@@ -194,7 +194,7 @@ const Create = ({token}) => {
 		<Layout>
 			<div className="row">
 				<div className="col-md-12">
-					<h1>Submit Link / URL</h1>
+					<h1 className="font-weight-bold" style={{fontFamily: 'tisa'}}>Submit Link / URL</h1>
 					<br/>
 				</div>
 			</div>

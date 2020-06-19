@@ -29,8 +29,8 @@ const Home = ({categories}) => {
 			<div key={i} className="row alert alert-secondary p-2 pb-3">
 				<div className="col-md-8" onClick={() => handleClick(l._id)}>
 					<a href={l.url} target="_blank">
-						<h5 className="pt-2">{l.title}</h5>
-						<h6 className="pt-2 text-danger" style={{fontSize: '12px'}}>{l.url}</h6>
+						<h5 className="pt-2" style={{color: '#202020'}}>{l.title}</h5>
+						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue'}}>{l.url}</h6>
 					</a>
 				</div>
 
@@ -49,10 +49,10 @@ const Home = ({categories}) => {
 
 	const listCategories = () => categories.map((c, i) => (
 		<Link key={i} href={`links/${c.slug}`}>
-			<a style={{border: '1px solid green'}} className="bg-light p-3 col-md-4">
+			<a style={{ borderRadius: '3px', textDecoration: 'none'}} className="bg-light p-3 col-md-4">
 				<div>
 					<div className="row">
-						<div className="col-md-4">
+						<div className="col">
 							<img 
 								src={c.image && c.image.url} 
 								alt={c.name} 
@@ -60,7 +60,7 @@ const Home = ({categories}) => {
 								className="pr-3"
 							/>
 						</div>
-						<div className="col-md-8"><h3>{c.name}</h3></div>
+						<div className="col-md-8"><h4 style={{color: '#404040'}}>{c.name}</h4></div>
 					</div>
 				</div>
 			</a>
@@ -71,17 +71,22 @@ const Home = ({categories}) => {
 		<Layout>
 			<div className="row">
 				<div className="col-md-12">
-					<h1 className="font-weight-bold" style={{marginLeft: '-17px'}}>Browse Courses/Tutorials</h1>
+					<h1 className="font-weight-bold text-center" style={{fontFamily: 'tisa'}}>Find here the links of all the best courses on the Internet!</h1>
+					<hr style={{background: '#C0C0C0'}}/>
+					<br/>
+					<h2 className="font-weight-bold" style={{marginLeft: '-17px', fontFamily: 'tisa'}}>Browse Courses/Tutorials</h2>
+		
 					<br/>
 				</div>
 			</div>
 
-			<div className="row">
+			<div className="row" style={{textDecoration: 'none'}}>
 				{listCategories()}
 			</div>
+			<hr/>
 
 			<div className="row pt-5">
-				<h2 className="font-weight-bold pb-3">Top 5 trending today</h2>
+				<h3 className="font-weight-bold pb-3" style={{fontFamily: 'tisa'}}>Top 5 trending today</h3>
 				<div className="col-md-12 overflow-hidden">{listOfLinks()}</div>
 			</div>
 		</Layout>

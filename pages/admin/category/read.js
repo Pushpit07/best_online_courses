@@ -51,7 +51,7 @@ const Read = ({user, token}) => {
 	const listCategories = () => 
 		categories.map((c, i) => (
 			<Link key={i} href={`/links/${c.slug}`}>
-				<a style={{border: '1px solid grey', textDecoration: 'none'}} className="bg-light p-3 col-md-6">
+				<a style={{borderRadius: '5px', textDecoration: 'none'}} className="bg-light p-3 col-md-6">
 					<div>
 						<div className="row">
 							<div className="col-md-3">
@@ -84,6 +84,7 @@ const Read = ({user, token}) => {
 			<div className="row">
 				<div className="col">
 					<h1>List of categories</h1>
+					<hr />
 					<br/>
 				</div>
 			</div>
