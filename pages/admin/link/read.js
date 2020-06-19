@@ -40,19 +40,19 @@ const Links = ({token, links, totalLinks, linksLimit, linkSkip}) => {
 
 	const listOfLinks = () => (
 		allLinks.map((l, i) => (
-			<div key={i} className="row alert alert-info p-2 pb-3">
+			<div key={i} className="row alert alert-secondary p-2 pb-3">
 				<div className="col-md-8" onClick={e => handleClick(l._id)}>
 					<a href={l.url} target="_blank">
-						<h5 className="pt-2">{l.title}</h5>
-						<h6 className="pt-2 text-danger" style={{fontSize: '12px'}}>{l.url}</h6>
+						<h5 className="pt-2" style={{color: '#202020'}}>{l.title}</h5>
+						<h6 className="pt-2" style={{fontSize: '12px',  color: 'RoyalBlue',overflow: 'hidden'}}>{l.url}</h6>
 					</a>
 				</div>
 				<div className="col-md-4 pt-2">
-					<span className="pull-right">
+					<span className="float-right">
 						{moment(l.createdAt).fromNow()} by {l.postedBy.name}
 					</span>
 					<br/>
-					<span className="badge text-secondary pull-right">{l.clicks} clicks</span>
+					<span className="badge text-secondary float-right">{l.clicks} clicks</span>
 				</div>
 
 				<div className="col-md-12">
@@ -64,10 +64,22 @@ const Links = ({token, links, totalLinks, linksLimit, linkSkip}) => {
 						<span key={i} className="badge text-success">{c.name}</span>
 					))}
 
-					<span onClick={(e) => confirmDelete(e, l._id)} className="badge text-danger pull-right">Delete</span>
+					<span onClick={(e) => confirmDelete(e, l._id)} className="badge text-danger float-right" >
+						<button className=" btn-danger btn-xs" 
+								style={{borderRadius: '3px', 
+										padding: '4px', 
+										paddingLeft: '6px', 
+										paddingRight: '6px'}}> Delete </button>
+					</span>
 
 					<Link href={`/user/link/${l._id}`}>
-						<a><span className="badge text-primary pull-right">Update</span></a>
+						<span  className="badge text-primary float-right">
+							<button className=" btn-primary btn-xs" 
+									style={{borderRadius: '3px', 
+											padding: '4px', 
+											paddingLeft: '6px', 
+											paddingRight: '6px'}}> Update </button>
+						</span>
 					</Link>
 				</div>
 			</div>
@@ -93,7 +105,7 @@ const Links = ({token, links, totalLinks, linksLimit, linkSkip}) => {
 		<Layout>
 			<div className="row" style={{marginLeft: '-30px'}}>
 				<div className="col-md-12">
-					<h1 className="display-4 font-weight-bold">All URLs / Links</h1>
+					<h1 className="display-4 font-weight-bold" style={{fontFamily: 'tisa'}}>All URLs / Links</h1>
 				</div>
 				
 			</div>
@@ -104,7 +116,7 @@ const Links = ({token, links, totalLinks, linksLimit, linkSkip}) => {
 				loadMore={loadMore}
 				hasMore={size > 0 && size >= limit}
 				loader= {
-					<img key={0} src="/static/images/loading3.gif" alt="Loading..." className="center"/>
+					<img key={0} src="/static/images/loading3.gif" alt="Loading..." className="center" style={{marginLeft: '380px'}}/>
 				}
 			>
 				<div className="row">

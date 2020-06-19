@@ -30,7 +30,7 @@ const Home = ({categories}) => {
 				<div className="col-md-8" onClick={() => handleClick(l._id)}>
 					<a href={l.url} target="_blank">
 						<h5 className="pt-2" style={{color: '#202020'}}>{l.title}</h5>
-						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue'}}>{l.url}</h6>
+						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue',overflow: 'hidden'}}>{l.url}</h6>
 					</a>
 				</div>
 

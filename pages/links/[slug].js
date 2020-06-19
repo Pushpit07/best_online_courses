@@ -63,7 +63,7 @@ const Links = ({query, category, links, totalLinks, linksLimit, linkSkip}) => {
 				<div className="col-md-8" onClick={() => handlePopularClick(l._id)}>
 					<a href={l.url} target="_blank">
 						<h5 className="pt-2" style={{color: '#202020'}}>{l.title}</h5>
-						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue'}}>{l.url}</h6>
+						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue', overflow: 'hidden'}}>{l.url}</h6>
 					</a>
 				</div>
 
@@ -85,7 +85,7 @@ const Links = ({query, category, links, totalLinks, linksLimit, linkSkip}) => {
 				<div className="col-md-8" onClick={e => handleClick(l._id)}>
 					<a href={l.url} target="_blank">
 						<h5 className="pt-2" style={{color: '#202020'}}>{l.title}</h5>
-						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue'}}>{l.url}</h6>
+						<h6 className="pt-2" style={{fontSize: '12px', color: 'RoyalBlue', overflow: 'hidden'}}>{l.url}</h6>
 					</a>
 				</div>
 				<div className="col-md-4 pt-2">
@@ -144,7 +144,7 @@ const Links = ({query, category, links, totalLinks, linksLimit, linkSkip}) => {
 					loadMore={loadMore}
 					hasMore={size > 0 && size >= limit}
 					loader= {
-						<img key={0} src="/static/images/loading3.gif" alt="Loading..." className="center"/>
+						<img key={0} src="/static/images/loading3.gif" alt="Loading..." className="center" style={{marginLeft: '380px'}}/>
 					}
 				>
 					<div className="row">
